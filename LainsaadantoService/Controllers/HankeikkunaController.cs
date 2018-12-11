@@ -17,11 +17,17 @@ namespace LainsaadantoService.Controllers
             _lainsaadantoaService = lainsaadantoService;
         }
 
+        [HttpGet]
         [Route("api/v1/hankeikkuna/lainsaadanto/")]
         public async Task<ActionResult> GetLainsaadantoData()
         {
             var result = await _lainsaadantoaService.GetLainsaadantoData();
-            return Ok(result);
+            var query = from item in result
+                        where item.rauennut == false
+                        where item.liittyLainsaadantoon == true
+                        group item by new { item.vastuuministeri, item.tila };
+
+            return Ok(query);
         }
 
     }
