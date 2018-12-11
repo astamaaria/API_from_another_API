@@ -17,7 +17,7 @@ namespace LainsaadantoService.Libs.Client
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<DataModel> ReturnLainsaandantoData()
+        public async Task<List<DataModel>> ReturnLainsaandantoData()
         {
             var client = _httpClientFactory.CreateClient();
             string today = DateTime.Now.ToString("yyyy-dd-MM");
@@ -34,7 +34,23 @@ namespace LainsaadantoService.Libs.Client
             {
                 json = await content.ReadAsStringAsync();
             }
-            return JsonConvert.DeserializeObject<DataModel>(json);
+            dynamic readyJson = JsonConvert.DeserializeObject(json);
+
+            List<DataModel> dataModels = new List<DataModel>();
+            foreach (dynamic item in readyJson.result)
+            {
+                DataModel dataModel = new DataModel();
+                dataModel.liittyLainsaadantoon = item.kohde.liittyyLainsaadantoon;
+                dataModel.tyyppi = item.kohde.tyyppi;
+                dataModel.tila = item.kohde.tila;
+                dataModel.nimi = item.kohde.nimi.fi;
+                dataModel.tiivistelma = item.kohde.tiivistelma.fi;
+                dataModel.rauennut = item.lainsaadanto.heTiedot.rauennut;
+                dataModel.vastuuministeri = item.lainsaadanto.heTiedot.vastuuministeri;
+                dataModels.Add(dataModel);
+            }
+
+            return dataModels;
         }
 
     }

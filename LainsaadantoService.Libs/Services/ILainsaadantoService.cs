@@ -8,6 +8,6 @@ namespace LainsaadantoService.Libs.Services
 {
     public interface ILainsaadantoService
     {
-        Task<DataModel> GetLainsaadantoData();
+        Task<List<DataModel>> GetLainsaadantoData();
     }
 }

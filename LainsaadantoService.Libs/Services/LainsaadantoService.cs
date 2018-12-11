@@ -15,7 +15,7 @@ namespace LainsaadantoService.Libs.Services
         {
             _getLainsaadantoData = getLainsaadantoData;
         }
-        public async Task<DataModel> GetLainsaadantoData()
+        public async Task<List<DataModel>> GetLainsaadantoData()
         {
             return await _getLainsaadantoData.ReturnLainsaandantoData();
         }

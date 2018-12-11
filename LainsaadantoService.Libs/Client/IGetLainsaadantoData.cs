@@ -8,6 +8,6 @@ namespace LainsaadantoService.Libs.Client
 {
     public interface IGetLainsaadantoData
     {
-        Task<DataModel> ReturnLainsaandantoData();
+        Task<List<DataModel>> ReturnLainsaandantoData();
     }
 }
