@@ -23,9 +23,9 @@ namespace LainsaadantoService.Controllers
         {
             var result = await _lainsaadantoaService.GetLainsaadantoData();
             var query = from item in result
-                        where item.rauennut == false
-                        where item.liittyLainsaadantoon == true
-                        group item by new { item.vastuuministeri.lastName, item.tila };
+                        where item.Rauennut == false
+                        where item.LiittyLainsaadantoon == true
+                        group item by new { item.Vastuuministeri.LastName, item.Tila };
 
             return Ok(query);
         }

@@ -11,14 +11,14 @@ namespace LainsaadantoService.Libs.Models
 
         private static List<MinisteriInfo> ministeriInfos;
 
-        public bool liittyLainsaadantoon { get; set; }
-        public string tyyppi { get; set; }
-        public string tila { get; set; }
-        public string nimi { get; set; }
-        public string tiivistelma { get; set; }
-        public bool rauennut { get; set; }
+        public bool LiittyLainsaadantoon { get; set; }
+        public string Tyyppi { get; set; }
+        public string Tila { get; set; }
+        public string Nimi { get; set; }
+        public string Tiivistelma { get; set; }
+        public bool Rauennut { get; set; }
 
-        public MinisteriInfo vastuuministeri {get; set;}
+        public MinisteriInfo Vastuuministeri {get; set;}
 
         public static MinisteriInfo HaeMinisteri(string nimi)
         {
@@ -27,7 +27,7 @@ namespace LainsaadantoService.Libs.Models
                 return new MinisteriInfo();
             }
 
-            var ministeri = ministeriInfos.Where(m => nimi.ToLower().Contains(m.lastName.ToLower())).SingleOrDefault<MinisteriInfo>();
+            var ministeri = ministeriInfos.Where(m => nimi.ToLower().Contains(m.LastName.ToLower())).SingleOrDefault<MinisteriInfo>();
             return ministeri;
         }
 
@@ -38,25 +38,25 @@ namespace LainsaadantoService.Libs.Models
 
                 ministeriInfos = new List<MinisteriInfo>();
                 ministeriInfos.AddRange(new List<MinisteriInfo>(){
-                    new MinisteriInfo { lastName = "Häkkänen", title = "Oikeusministeri", party = Party.KOKOOMUS },
-                    new MinisteriInfo { lastName = "Orpo", title = "Valtiovarainministeri", party = Party.KOKOOMUS },
-                    new MinisteriInfo { lastName = "Mykkänen", title = "Sisäministeri", party = Party.KOKOOMUS },
-                    new MinisteriInfo { lastName = "Virolainen", title = "Ulkomaankauppa- ja kehitysministeri", party = Party.KOKOOMUS },
-                    new MinisteriInfo { lastName = "Grahn-Laasonen", title = "Opetusministeri", party = Party.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Häkkänen", Title = "Oikeusministeri", Party = PartyName.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Orpo", Title = "Valtiovarainministeri", Party = PartyName.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Mykkänen", Title = "Sisäministeri", Party = PartyName.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Virolainen", Title = "Ulkomaankauppa- ja kehitysministeri", Party = PartyName.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Grahn-Laasonen", Title = "Opetusministeri", Party = PartyName.KOKOOMUS },
 
-                    new MinisteriInfo { lastName = "Berner", title = "Liikenne- ja viestintäministeri", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Saarikko", title = "Perhe- ja peruspalveluministerii", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Sipilä", title = "Pääministeri", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Tiilikainen", title = "Asunto-, energia- ja ympäristöministeri", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Leppä", title = "Maa- ja metsätalousministeri", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Vehviläinen", title = "Kunta- ja uudistusministeri", party = Party.KESKUSTA },
-                    new MinisteriInfo { lastName = "Lintilä", title = "Elinkeinoministeri", party = Party.KESKUSTA },
+                    new MinisteriInfo { LastName = "Berner", Title = "Liikenne- ja viestintäministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Saarikko", Title = "Perhe- ja peruspalveluministerii", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Sipilä", Title = "Pääministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Tiilikainen", Title = "Asunto-, energia- ja ympäristöministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Leppä", Title = "Maa- ja metsätalousministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Vehviläinen", Title = "Kunta- ja uudistusministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Lintilä", Title = "Elinkeinoministeri", Party = PartyName.KESKUSTA },
 
-                    new MinisteriInfo { lastName = "Lindström", title = "Työministeri", party = Party.SINISET },
-                    new MinisteriInfo { lastName = "Niinistö", title = "Puolustusministeri", party = Party.SINISET },
-                    new MinisteriInfo { lastName = "Terho", title = "Eurooppa-, kulttuuri- ja urheiluministeri", party = Party.SINISET },
-                    new MinisteriInfo { lastName = "Mattila", title = "Sosiaali- ja terveysministeri", party = Party.SINISET },
-                    new MinisteriInfo { lastName = "Soini", title = "Ulkoministeri", party = Party.SINISET }
+                    new MinisteriInfo { LastName = "Lindström", Title = "Työministeri", Party = PartyName.SINISET },
+                    new MinisteriInfo { LastName = "Niinistö", Title = "Puolustusministeri", Party = PartyName.SINISET },
+                    new MinisteriInfo { LastName = "Terho", Title = "Eurooppa-, kulttuuri- ja urheiluministeri", Party = PartyName.SINISET },
+                    new MinisteriInfo { LastName = "Mattila", Title = "Sosiaali- ja terveysministeri", Party = PartyName.SINISET },
+                    new MinisteriInfo { LastName = "Soini", Title = "Ulkoministeri", Party = PartyName.SINISET }
                 });
             }
         }

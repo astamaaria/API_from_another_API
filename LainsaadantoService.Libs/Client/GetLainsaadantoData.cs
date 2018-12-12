@@ -40,13 +40,13 @@ namespace LainsaadantoService.Libs.Client
             foreach (dynamic item in readyJson.result)
             {
                 DataModel dataModel = new DataModel();
-                dataModel.liittyLainsaadantoon = item.kohde.liittyyLainsaadantoon;
-                dataModel.tyyppi = item.kohde.tyyppi;
-                dataModel.tila = item.kohde.tila;
-                dataModel.nimi = item.kohde.nimi.fi;
-                dataModel.tiivistelma = item.kohde.tiivistelma.fi;
-                dataModel.rauennut = item.lainsaadanto.heTiedot.rauennut;
-                dataModel.vastuuministeri = DataModel.HaeMinisteri((string)item.lainsaadanto.heTiedot.vastuuministeri);
+                dataModel.LiittyLainsaadantoon = item.kohde.liittyyLainsaadantoon;
+                dataModel.Tyyppi = item.kohde.tyyppi;
+                dataModel.Tila = item.kohde.tila;
+                dataModel.Nimi = item.kohde.nimi.fi;
+                dataModel.Tiivistelma = item.kohde.tiivistelma.fi;
+                dataModel.Rauennut = item.lainsaadanto.heTiedot.rauennut;
+                dataModel.Vastuuministeri = DataModel.HaeMinisteri((string)item.lainsaadanto.heTiedot.vastuuministeri);
                 dataModels.Add(dataModel);
             }
 
