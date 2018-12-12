@@ -25,7 +25,7 @@ namespace LainsaadantoService.Controllers
             var query = from item in result
                         where item.rauennut == false
                         where item.liittyLainsaadantoon == true
-                        group item by new { item.vastuuministeri, item.tila };
+                        group item by new { item.vastuuministeri.lastName, item.tila };
 
             return Ok(query);
         }
