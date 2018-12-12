@@ -21,7 +21,7 @@ namespace LainsaadantoService.Libs.Client
         {
             var client = _httpClientFactory.CreateClient();
             string today = DateTime.Now.ToString("yyyy-dd-MM");
-            string search = $"{{ \"asettamisPaivaAlku\": \"2015-05-29\",\"asettamisPaivaLoppu\": \"{today}\",\"size\": 10, \"tyyppi\": [\"LAINSAADANTO\"],\"tila\":[\"KAYNNISSA\"]}}";
+            string search = $"{{ \"asettamisPaivaAlku\": \"2015-05-29\",\"asettamisPaivaLoppu\": \"{today}\",\"size\": 600, \"tyyppi\": [\"LAINSAADANTO\"],\"tila\":[\"KAYNNISSA\"]}}";
 
             var httpContent = new StringContent(search);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -46,7 +46,7 @@ namespace LainsaadantoService.Libs.Client
                 dataModel.nimi = item.kohde.nimi.fi;
                 dataModel.tiivistelma = item.kohde.tiivistelma.fi;
                 dataModel.rauennut = item.lainsaadanto.heTiedot.rauennut;
-                dataModel.vastuuministeri = item.lainsaadanto.heTiedot.vastuuministeri;
+                dataModel.vastuuministeri = DataModel.HaeMinisteri((string)item.lainsaadanto.heTiedot.vastuuministeri);
                 dataModels.Add(dataModel);
             }
 
