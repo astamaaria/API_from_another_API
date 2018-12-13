@@ -20,7 +20,7 @@ namespace LainsaadantoService.Libs.Client
         public async Task<List<DataModel>> ReturnLainsaandantoData()
         {
             var client = _httpClientFactory.CreateClient();
-            string today = DateTime.Now.ToString("yyyy-dd-MM");
+            string today = DateTime.Now.ToString("yyyy-MM-dd");
             string search = $"{{ \"asettamisPaivaAlku\": \"2015-05-29\",\"asettamisPaivaLoppu\": \"{today}\",\"size\": 600, \"tyyppi\": [\"LAINSAADANTO\"],\"tila\":[\"KAYNNISSA\"]}}";
 
             var httpContent = new StringContent(search);
