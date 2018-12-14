@@ -10,12 +10,12 @@ namespace LainsaadantoService.Libs.Models
 
         public string LastName { get; set; }
         public string Title { get; set; }
-        public PartyName? Party { get; set; }
-        public enum PartyName
-        {
-            KESKUSTA,
-            KOKOOMUS,
-            SINISET
-        }
+
+        public string Party { get; set; }
+        public int PartyIndex { get; set; }
+        public static string[] PartyNames = new string[] { "Keskusta", "Kokoomus", "Sosiaalidemokraatit", "Siniset", "Perussuomalaiset", "Vasemmistoliitto", "RKP", "Kristillisdemokraatit" };
+       
+        
+       
     }
 }

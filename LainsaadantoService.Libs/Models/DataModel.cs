@@ -38,25 +38,25 @@ namespace LainsaadantoService.Libs.Models
 
                 ministeriInfos = new List<MinisteriInfo>();
                 ministeriInfos.AddRange(new List<MinisteriInfo>(){
-                    new MinisteriInfo { LastName = "Häkkänen", Title = "Oikeusministeri", Party = PartyName.KOKOOMUS },
-                    new MinisteriInfo { LastName = "Orpo", Title = "Valtiovarainministeri", Party = PartyName.KOKOOMUS },
-                    new MinisteriInfo { LastName = "Mykkänen", Title = "Sisäministeri", Party = PartyName.KOKOOMUS },
-                    new MinisteriInfo { LastName = "Virolainen", Title = "Ulkomaankauppa- ja kehitysministeri", Party = PartyName.KOKOOMUS },
-                    new MinisteriInfo { LastName = "Grahn-Laasonen", Title = "Opetusministeri", Party = PartyName.KOKOOMUS },
+                    new MinisteriInfo { LastName = "Häkkänen", Title = "Oikeusministeri", Party = MinisteriInfo.PartyNames[1] , PartyIndex=1},
+                    new MinisteriInfo { LastName = "Orpo", Title = "Valtiovarainministeri", Party = MinisteriInfo.PartyNames[1] , PartyIndex=1},
+                    new MinisteriInfo { LastName = "Mykkänen", Title = "Sisäministeri", Party = MinisteriInfo.PartyNames[1] , PartyIndex=1},
+                    new MinisteriInfo { LastName = "Virolainen", Title = "Ulkomaankauppa- ja kehitysministeri", Party = MinisteriInfo.PartyNames[1] , PartyIndex=1},
+                    new MinisteriInfo { LastName = "Grahn-Laasonen", Title = "Opetusministeri", Party = MinisteriInfo.PartyNames[1] , PartyIndex=1},
 
-                    new MinisteriInfo { LastName = "Berner", Title = "Liikenne- ja viestintäministeri", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Saarikko", Title = "Perhe- ja peruspalveluministerii", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Sipilä", Title = "Pääministeri", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Tiilikainen", Title = "Asunto-, energia- ja ympäristöministeri", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Leppä", Title = "Maa- ja metsätalousministeri", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Vehviläinen", Title = "Kunta- ja uudistusministeri", Party = PartyName.KESKUSTA },
-                    new MinisteriInfo { LastName = "Lintilä", Title = "Elinkeinoministeri", Party = PartyName.KESKUSTA },
+                    new MinisteriInfo { LastName = "Berner", Title = "Liikenne- ja viestintäministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Saarikko", Title = "Perhe- ja peruspalveluministerii", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Sipilä", Title = "Pääministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Tiilikainen", Title = "Asunto-, energia- ja ympäristöministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Leppä", Title = "Maa- ja metsätalousministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Vehviläinen", Title = "Kunta- ja uudistusministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
+                    new MinisteriInfo { LastName = "Lintilä", Title = "Elinkeinoministeri", Party=MinisteriInfo.PartyNames[0] , PartyIndex=0},
 
-                    new MinisteriInfo { LastName = "Lindström", Title = "Työministeri", Party = PartyName.SINISET },
-                    new MinisteriInfo { LastName = "Niinistö", Title = "Puolustusministeri", Party = PartyName.SINISET },
-                    new MinisteriInfo { LastName = "Terho", Title = "Eurooppa-, kulttuuri- ja urheiluministeri", Party = PartyName.SINISET },
-                    new MinisteriInfo { LastName = "Mattila", Title = "Sosiaali- ja terveysministeri", Party = PartyName.SINISET },
-                    new MinisteriInfo { LastName = "Soini", Title = "Ulkoministeri", Party = PartyName.SINISET }
+                    new MinisteriInfo { LastName = "Lindström", Title = "Työministeri", Party=MinisteriInfo.PartyNames[3] , PartyIndex=2},
+                    new MinisteriInfo { LastName = "Niinistö", Title = "Puolustusministeri", Party=MinisteriInfo.PartyNames[3] , PartyIndex=2},
+                    new MinisteriInfo { LastName = "Terho", Title = "Eurooppa-, kulttuuri- ja urheiluministeri", Party=MinisteriInfo.PartyNames[3] , PartyIndex=2},
+                    new MinisteriInfo { LastName = "Mattila", Title = "Sosiaali- ja terveysministeri", Party=MinisteriInfo.PartyNames[3] , PartyIndex=2},
+                    new MinisteriInfo { LastName = "Soini", Title = "Ulkoministeri", Party=MinisteriInfo.PartyNames[3], PartyIndex=2}
                 });
             }
         }

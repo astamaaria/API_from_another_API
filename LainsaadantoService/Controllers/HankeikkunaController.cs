@@ -24,8 +24,11 @@ namespace LainsaadantoService.Controllers
             var result = await _lainsaadantoaService.GetLainsaadantoData();
             var query = from item in result
                         where item.Rauennut == false
+                        where item.Vastuuministeri.LastName != null
                         where item.LiittyLainsaadantoon == true
-                        group item by new { item.Vastuuministeri.LastName, item.Tila };
+                        orderby item.Vastuuministeri.LastName descending
+                        group item by new { item.Vastuuministeri.LastName, item.Tila }
+                        ;
 
             return Ok(query);
         }
